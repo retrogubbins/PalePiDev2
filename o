@@ -1,0 +1,1 @@
+g++ -D__DEBUG__ PALESDL_IO.o PALESDL.o PALESDL_CONFIG.o PALE48K.o PALEMEM.o PALEROM.o PALE96K.o PALE_KEYS.o PALETAPS.o PALE128K.o  sge_surface.o sge_rotation.o sge_blib.o sge_primitives.o KOGEL/z80.o KOGEL/KOGELMEM.o KOGEL/KOGELIO.o  PALEDOS_TEMP.o  -o "PALESDL.exe"  -lSDL

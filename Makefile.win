@@ -1,0 +1,102 @@
+# Project: PALESDL
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe -D__DEBUG__
+CC   = gcc.exe -D__DEBUG__
+WINDRES = windres.exe
+RES  = PALESDL_private.res
+OBJ  = PALESDL_VID.o PALESDL_IO.o PALESDL.o PALESDL_CONFIG.o PALE48K.o PALEMEM.o PALEROM.o PALE96K.o CORE_STATUS.o PALE_KEYS.o PALETAPS.o PALE128K.o PALEDISK.o PALERAWTAPE.o sge_surface.o sge_rotation.o sge_blib.o sge_primitives.o KOGEL/z80.o KOGEL/KOGELMEM.o KOGEL/KOGELIO.o IMD/sim_imd.o IMD/sim_fio.o PALEDOS_TEMP.o $(RES)
+LINKOBJ  = PALESDL_VID.o PALESDL_IO.o PALESDL.o PALESDL_CONFIG.o PALE48K.o PALEMEM.o PALEROM.o PALE96K.o CORE_STATUS.o PALE_KEYS.o PALETAPS.o PALE128K.o PALEDISK.o PALERAWTAPE.o sge_surface.o sge_rotation.o sge_blib.o sge_primitives.o KOGEL/z80.o KOGEL/KOGELMEM.o KOGEL/KOGELIO.o IMD/sim_imd.o IMD/sim_fio.o PALEDOS_TEMP.o $(RES)
+LIBS =  -L"D:/Dev-Cpp/lib" -mwindows -lwsock32 -lkernel32 -luser32 -lgdi32 -lwinspool -lcomdlg32 -ladvapi32 -lshell32 -lole32 -loleaut32 -luuid -lmsimg32 ../Dev-Cpp/lib/SDL/SDL.lib -lgmon -pg  -g3 
+INCS =  -I"D:/Dev-Cpp/include"  -I"D:/Dev-Cpp/include/SDL/include" 
+CXXINCS =  -I"D:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"D:/Dev-Cpp/include/c++/3.4.2/backward"  -I"D:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"D:/Dev-Cpp/include/c++/3.4.2"  -I"D:/Dev-Cpp/include" 
+BIN  = PALESDL.exe
+CXXFLAGS = $(CXXINCS)   -fexpensive-optimizations -O3 -pg -g3
+CFLAGS = $(INCS) -DWIN32_EXTRA_LEAN -DWIN32 -W -D_MSC_DLL -fno-exceptions -g -O0 -D_DEBUG -D_WIN32  -fexpensive-optimizations -O3 -pg -g3
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before PALESDL.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "PALESDL.exe" $(LIBS)
+
+PALESDL_VID.o: PALESDL_VID.CXX
+	$(CPP) -c PALESDL_VID.CXX -o PALESDL_VID.o $(CXXFLAGS)
+
+PALESDL_IO.o: PALESDL_IO.C
+	$(CPP) -c PALESDL_IO.C -o PALESDL_IO.o $(CXXFLAGS)
+
+PALESDL.o: PALESDL.C
+	$(CPP) -c PALESDL.C -o PALESDL.o $(CXXFLAGS)
+
+PALESDL_CONFIG.o: PALESDL_CONFIG.C
+	$(CPP) -c PALESDL_CONFIG.C -o PALESDL_CONFIG.o $(CXXFLAGS)
+
+PALE48K.o: PALE48K.C
+	$(CPP) -c PALE48K.C -o PALE48K.o $(CXXFLAGS)
+
+PALEMEM.o: PALEMEM.C
+	$(CPP) -c PALEMEM.C -o PALEMEM.o $(CXXFLAGS)
+
+PALEROM.o: PALEROM.C
+	$(CPP) -c PALEROM.C -o PALEROM.o $(CXXFLAGS)
+
+PALE96K.o: PALE96K.C
+	$(CPP) -c PALE96K.C -o PALE96K.o $(CXXFLAGS)
+
+CORE_STATUS.o: CORE_STATUS.CXX
+	$(CPP) -c CORE_STATUS.CXX -o CORE_STATUS.o $(CXXFLAGS)
+
+PALE_KEYS.o: PALE_KEYS.C
+	$(CPP) -c PALE_KEYS.C -o PALE_KEYS.o $(CXXFLAGS)
+
+PALETAPS.o: PALETAPS.C
+	$(CPP) -c PALETAPS.C -o PALETAPS.o $(CXXFLAGS)
+
+PALE128K.o: PALE128K.C
+	$(CPP) -c PALE128K.C -o PALE128K.o $(CXXFLAGS)
+
+PALEDISK.o: PALEDISK.CXX
+	$(CPP) -c PALEDISK.CXX -o PALEDISK.o $(CXXFLAGS)
+
+PALERAWTAPE.o: PALERAWTAPE.C
+	$(CPP) -c PALERAWTAPE.C -o PALERAWTAPE.o $(CXXFLAGS)
+
+sge_surface.o: sge_surface.cpp
+	$(CPP) -c sge_surface.cpp -o sge_surface.o $(CXXFLAGS)
+
+sge_rotation.o: sge_rotation.cpp
+	$(CPP) -c sge_rotation.cpp -o sge_rotation.o $(CXXFLAGS)
+
+sge_blib.o: sge_blib.cpp
+	$(CPP) -c sge_blib.cpp -o sge_blib.o $(CXXFLAGS)
+
+sge_primitives.o: sge_primitives.cpp
+	$(CPP) -c sge_primitives.cpp -o sge_primitives.o $(CXXFLAGS)
+
+KOGEL/z80.o: KOGEL/z80.c
+	$(CPP) -c KOGEL/z80.c -o KOGEL/z80.o $(CXXFLAGS)
+
+KOGEL/KOGELMEM.o: KOGEL/KOGELMEM.CXX
+	$(CPP) -c KOGEL/KOGELMEM.CXX -o KOGEL/KOGELMEM.o $(CXXFLAGS)
+
+KOGEL/KOGELIO.o: KOGEL/KOGELIO.CXX
+	$(CPP) -c KOGEL/KOGELIO.CXX -o KOGEL/KOGELIO.o $(CXXFLAGS)
+
+IMD/sim_imd.o: IMD/sim_imd.c
+	$(CPP) -c IMD/sim_imd.c -o IMD/sim_imd.o $(CXXFLAGS)
+
+IMD/sim_fio.o: IMD/sim_fio.c
+	$(CPP) -c IMD/sim_fio.c -o IMD/sim_fio.o $(CXXFLAGS)
+
+PALEDOS_TEMP.o: PALEDOS_TEMP.C
+	$(CPP) -c PALEDOS_TEMP.C -o PALEDOS_TEMP.o $(CXXFLAGS)
+
+PALESDL_private.res: PALESDL_private.rc 
+	$(WINDRES) -i PALESDL_private.rc --input-format=rc -o PALESDL_private.res -O coff 
